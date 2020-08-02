@@ -4,6 +4,20 @@ const menu = document.querySelector('.menu');
 const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
+const tooltip = document.querySelectorAll('.try-me');
+const body = document.body;
+
+
+Element.prototype.remove = function() {
+  this.parentElement.removeChild(this);
+};
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+  for(var i = this.length - 1; i >= 0; i--) {
+    if(this[i] && this[i].parentElement) {
+      this[i].parentElement.removeChild(this[i]);
+    }
+  }
+};
 
 // Set Initial State Of Menu
 let showMenu = false;
@@ -11,6 +25,7 @@ let showMenu = false;
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
+  tooltip.remove();
   if (!showMenu) {
     menuBtn.classList.add('close');
     menu.classList.add('show');
@@ -29,5 +44,15 @@ function toggleMenu() {
 
     // Set Menu State
     showMenu = false;
+  }
+}
+function delete_tooltip() {
+  tooltip.remove();
+}
+function toggle() {
+  if (body.className === 'light') {
+    body.classList.replace('light', 'dark');
+  }else{
+    body.classList.replace('dark', 'light');
   }
 }
