@@ -6,6 +6,14 @@ const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 const tooltip = document.querySelectorAll('.try-me');
 const body = document.body;
+const theme = localStorage.getItem('theme');
+const check_box = document.getElementById('check_box');
+
+if (theme){
+  body.classList.add(theme)
+}
+
+check_box.checked = theme === 'dark';
 
 
 Element.prototype.remove = function() {
@@ -52,7 +60,9 @@ function delete_tooltip() {
 function toggle() {
   if (body.className === 'light') {
     body.classList.replace('light', 'dark');
+    localStorage.setItem('theme', 'dark');
   }else{
     body.classList.replace('dark', 'light');
+    localStorage.setItem('theme', 'light');
   }
 }

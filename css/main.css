@@ -1,10 +1,19 @@
+:root{
+    --white: #fff;
+    --extra-ligth-gray: #c4c4c4;
+    --light-gray: #666;
+    --dark-gray: #444;
+    --yellow: #eece1a;
+    --black: #000;
+}
+
 .light{
   --bg-img-url: url(../img/background.jpg);
-  --pop-up-bg: #666;
+  --bg: var(--light-gray);
 }
 .dark{
   --bg-img-url: url(../img/dark_background.jpg);
-  --pop-up-bg: #444;
+  --bg: var(--dark-gray);
 }
 .menu-btn {
   position: absolute;
@@ -17,7 +26,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: var(--white);
     transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -48,7 +57,7 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #373737;
+    background: var(--light-gray);
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
@@ -65,14 +74,14 @@
       height: 250px;
       background: url("../img/portrait.jpg");
       border-radius: 50%;
-      border: solid 3px #eece1a; }
+      border: solid 3px var(--yellow); }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #eece1a; }
+      color: var(--yellow); }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -80,11 +89,11 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
-      color: gray;
+      color: var(--light-gray);
         transform: scale(1.25)
 }
 
@@ -105,8 +114,8 @@
   box-sizing: border-box; }
 
 body {
-  background: #444;
-  color: #fff;
+  background: var(--bg);
+  color: var(--white);
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -135,7 +144,7 @@ h3 {
     color: rgba(73, 73, 73, 0.5); }
 
 a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none; }
 
 header {
@@ -144,7 +153,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: var(--yellow); }
 
 main {
   padding: 4rem;
@@ -154,7 +163,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: var(--yellow);
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
@@ -170,7 +179,7 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: #eece1a 3px solid; }
+    border: var(--yellow) 3px solid; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -183,7 +192,7 @@ main {
   .about-info .job {
     background: #515151;
     padding: 0.5rem;
-    border-bottom: #eece1a 5px solid; }
+    border-bottom: var(--yellow) 5px solid; }
 
 .projects {
   display: grid;
@@ -191,10 +200,10 @@ main {
   grid-template-columns: repeat(3, 1fr); }
   .projects img {
     width: 100%;
-    border: 3px #fff solid; }
+    border: 3px var(--white) solid; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #eece1a;
+      border-color: var(--yellow);
       transition: all 0.5s ease-out; }
 
 .boxes {
@@ -205,16 +214,16 @@ main {
   margin-top: 1rem; }
   .boxes div {
     font-size: 2rem;
-    border: 3px #fff solid;
+    border: 3px var(--white) solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
-      background: #eece1a;
-      color: #000; }
+      background: var(--yellow);
+      color: var(--black); }
       .boxes div:hover span {
-        color: #000; }
+        color:var(--black); }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -223,22 +232,121 @@ main {
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #eece1a;
-    color: #000; }
+    color: var(--black); }
 
 .btn-dark {
-  background: black;
-  color: #fff; }
+  background: var(--black);
+  color:var(--white); }
 
 .btn-light {
-  background: #c4c4c4;
-  color: #333; }
+  background: var(--extra-ligth-gray);
+  color: var(--dark-gray); }
 
-#main-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #2b2b2b;
-  color: #fff;
-  height: 60px; }
+.try-me{
+    opacity:0;
+    background-color: var(--light-gray);
+    color: lightgray;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    text-align: center;
+    padding-top: 10px;
+    animation: popup 1s 5s;
+    animation-fill-mode: forwards;
+}
+.try-me ::after {
+    background-color: var(--light-gray);
+    content: "";
+    width: 15px;
+    height:15px;
+    position: absolute;
+    top: 30%;
+    left: 100%;
+    transform: translateX(-50%) rotate(135deg);
+    border-left: 2px solid var(--light-gray);
+    border-top: 2px solid var(--light-gray);
+}
+.close-button{
+    background: transparent;
+    border: none;
+    color: var(--extra-ligth-gray);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    bottom: -250px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #eece1a;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #eece1a;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@keyframes popup {
+    from{
+        opacity: 0;
+        top: 10vh;
+    }
+    to{
+        visibility: visible;
+        opacity: 80%;
+        top: 25px;
+    }
+}
 
 @media screen and (min-width: 1171px) {
   .projects {
@@ -282,122 +390,22 @@ main {
   .try-me{
     display: none;
   }
-}
-
-.try-me{
-  opacity:0;
-  background-color: var(--pop-up-bg);
-  color: lightgray;
-  width: 100px;
-  height: 50px;
-  position: absolute;
-  top: 25px;
-  right: 100px;
-  text-align: center;
-  padding-top: 10px;
-  animation: popup 1s 5s;
-  animation-fill-mode: forwards;
-}
-.try-me ::after {
-  background-color: var(--pop-up-bg);
-  content: "";
-  width: 15px;
-  height:15px;
-  position: absolute;
-  top: 30%;
-  left: 100%;
-  transform: translateX(-50%) rotate(135deg);
-  border-left: 2px solid var(--pop-up-bg);
-  border-top: 2px solid var(--pop-up-bg);
-}
-.close-button{
-  background: transparent;
-  border: none;
-  color: darkgray;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  bottom: -250px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #eece1a;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #eece1a;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-@keyframes popup {
-  from{
-    opacity: 0;
-    top: 10vh;
-  }
-  to{
-    visibility: visible;
-    opacity: 80%;
-    top: 25px;
+  .switch{
+      bottom: -150px;
   }
 }
-
 @media screen and (max-width: 500px) {
   main {
     padding: 2rem; }
     main #home h1 {
-      margin-top: 10vh; }
+      margin-top: 10vh;
+    }
     main .lg-heading {
       margin-top: 1rem;
-      font-size: 5rem; }
+      font-size: 3.5rem; }
   .projects {
     grid-template-columns: 1fr; }
+  .switch{
+      bottom: -100px;
+  }
 }
