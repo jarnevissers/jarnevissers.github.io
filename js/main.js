@@ -66,3 +66,7 @@ function toggle() {
     localStorage.setItem('theme', 'light');
   }
 }
+
+function privateRepository(){
+  alert('This is a currently a private repository\nContact me for more information.')
+}
