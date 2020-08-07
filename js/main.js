@@ -70,3 +70,7 @@ function toggle() {
 function privateRepository(){
   alert('This is a currently a private repository\nContact me for more information.')
 }
+
+function download_cv() {
+  alert('I am currently implementing this feature')
+}

@@ -432,6 +432,24 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+#downloadButton{
+    background-color: transparent;
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    border-radius: 25px;
+    height: 50px;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.8s;
+}
+#downloadButton:hover{
+    background-color: var(--yellow);
+    color: var(--white);
+
+}
 
 @keyframes popup {
     from {
