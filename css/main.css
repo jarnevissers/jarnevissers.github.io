@@ -432,7 +432,8 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-#downloadButton{
+
+#downloadButton {
     background-color: transparent;
     color: var(--yellow);
     border: 2px solid var(--yellow);
@@ -445,7 +446,8 @@ input:checked + .slider:before {
     transform: translate(-50%, -50%);
     transition: 0.8s;
 }
-#downloadButton:hover{
+
+#downloadButton:hover {
     background-color: var(--yellow);
     color: var(--white);
 
@@ -530,6 +532,11 @@ input:checked + .slider:before {
 
     .switch {
         bottom: 20px;
+    }
+
+    #downloadButton {
+        left: 25%;
+        top: 35%;
     }
 }
 
